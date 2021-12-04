@@ -1,9 +1,11 @@
 class Todo {
     constructor(){
         this.todoItems = []
+        this.idCount = 0
 }
-addItem(itemText){
+addItem(itemText, id){
     const item = {
+        id: id,
         text: itemText,
         isCompleted: false
     }

@@ -16,6 +16,7 @@ deleteItemBtns.forEach(deleteItemBtn => {
 const buildItem = (text) => {
     const li = document.createElement('li')
     li.className = 'listItem'
+    li.setAttribute('id', todo.idCount)
     const div = document.createElement('div')
     div.className = 'itemTextContainer'
     const input = document.createElement('input')
@@ -44,8 +45,10 @@ const buildItem = (text) => {
 addBtn.onclick = () => {
     if(input.value){
     const inputValue = input.value
-    todo.addItem(inputValue)
+    todo.addItem(inputValue, todo.idCount)
     list.appendChild(buildItem(inputValue))
     input.value = ''
+    todo.idCount++
+    console.log(todo.todoItems)
 }
 }
